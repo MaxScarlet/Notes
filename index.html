@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memo Notes Project</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Replace "styles.css" with the actual name of your CSS file -->
+    <script src="js/code.js" defer></script>
+    <script src="js/utils.js" ></script>
+    <script src="js/utils_debug.js" ></script>
+</head>
+<body>
+    <div class="header">
+        <h1>Memo Notes <img src="assets/info_w_32.png" class="aboutButton" onclick="aboutTheSite()"/></h1>
+    </div>
+    <div class="container">
+        <!-- Add more memo notes here as needed -->
+        <button id="toggleForm" class="button toggle" onclick="return toggleForm()">+</button>
+        <div class="form-container" id="memoForm" style="display: none;">
+            <h2>Add New Memo</h2>
+            <form onsubmit="return false" id="formNote">
+                <label for="memoTitle" class="form-label">Date and Time</label>
+                <input type="datetime-local" min="" id="dateBox" class="form-input" style="width: 200px;" />
+                <br />
+
+                <label for="memoTitle" class="form-label">Memo Title</label>
+                <input type="text" id="memoTitle" class="form-input" required />
+
+                <label for="memoContent" class="form-label">Memo Content</label>
+                <textarea id="memoContent" class="form-input" rows="4" required></textarea>
+
+                <button onclick="addNote()" class="button">Add Memo</button>
+                <button type="reset" onclick="clearNote()" class="button">Clear Note</button>
+                <button id="randomBtn" onclick="randomNote()" class="button debug">Random</button>
+                <button type="reset" id="clearButton" onclick="clearNoteStorage()" class="button debug">Clear Storage</button>
+            </form>
+        </div>
+        <br /><br />
+        <section id="sectionNotes" ></section>
+    </div>
+</body>
+</html>
